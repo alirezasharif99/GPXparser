@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Custom CSS End -->
+</head>
+<body>
+   
+    <p></p>
+    <hr>
+    <h3>File Log:</h3>
+    <div   cellpadding="2">
+        <table id = "table1">
+            <thead>
+                <tr>
+                    <th> File name (click to download)  </th>
+                    <th> Version   </th>
+                    <th> Creator   </th>
+                    <th> Number of Waypoints   </th>
+                    <th> Number of Routes   </th>
+                    <th> Number of Tracks   </th>
+
+                </tr>
+            </thead>
+            <tbody id = "tbody1" style= " overflow: scroll;  width: 110px; height: 110px;">
+            </tbody>
+        </table>
+    </div>
+    <hr>
+
+    <form ref='uploadForm'
+        id='uploadForm'
+        action='/upload'
+        method='post'
+        encType="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="uploadFile" class="btn btn-secondary">
+            <input type='submit' value='Upload' class="btn btn-secondary">
+        </div>
+`   </form>
+    <hr>
+    <h3>GPX View:</h3>
+    <form id = 'GPXviewForm'>
+        <label for="files">Choose a file:</label>
+        <select name="files" id="GPXview">
+        </select>
+        <br><br>
+        <input type="submit" value="Submit" class="btn btn-secondary">
+    </form>
+    <hr>
+    <div   cellpadding="4">
+        <table id = "table2" style =" overflow: scroll;  display: block; width: 800px; height: 200px;">
+            <thead>
+                <tr>
+                    <th> Component   </th>
+                    <th> Name   </th>
+                    <th> Number of Points     </th>
+                    <th> Length    </th>
+                    <th> Loop     </th>
+                    <th> other data </th>
+                </tr>
+            </thead>
+            <tbody id = "tbody2" >
+            </tbody>
+        </table>
+    </div>
+    <div id = "otherData">
+
+    </div>
+    <hr>
+    <h3>Create New GPX File:</h3>
+    <form id='create'>
+    <div class="form-group">
+      <label for="entryBox">File Name</label>
+      <input type="text" class="form-control" id="entryBox" value="filename.gpx" placeholder="Placeholder">
+    </div>
+<div class="form-group">
+  <input type='submit' class="btn btn-secondary">
+</div>
+</form>
+<hr>
+<h3>Data Base Menu:</h3>
+<form id='connectDB'>
+    <div class="form-group">
+      <label for="entryBox">File Name</label>
+      <input type="text" class="form-control" id="user" value="" placeholder="Username">
+      <input type="text" class="form-control" id="pass" value="" placeholder="Password">
+      <input type="text" class="form-control" id="dbname" value="" placeholder="Data Base Name">
+    </div>
+<div class="form-group">
+  <input type='submit' value="Login" class="btn btn-secondary">
+</div>
+</form>
+<hr>
+<form id = 'storeFiles'>
+    <div class = "form-group">
+        <input type='submit' value="Store All Files" class="btn btn-secondary"> 
+    </div>
+</form>
+<hr>
+<form id = 'clearFiles'>
+    <div class = "form-group">
+        <input type='submit' value="Clear All Data" class="btn btn-secondary"> 
+    </div>
+</form>
+    <!-- Leave me at the bottom of body -->
+    <script src="/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
